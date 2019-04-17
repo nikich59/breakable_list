@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.prokoshevnik.breakablelist.BreakableListExampleActivity">
+
+    <com.prokoshevnik.uiutils.breakablelist.BreakableListLayout
+        android:id="@+id/breakable_list_example_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffdfdf">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#a12525"
+            android:padding="10dp"
+            android:text="This"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#1525a3"
+            android:padding="10dp"
+            android:text="text"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#25a144"
+            android:padding="10dp"
+            android:text="will"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#822d91"
+            android:padding="10dp"
+            android:text="break"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#9fa125"
+            android:padding="10dp"
+            android:text="when"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#2595a1"
+            android:padding="10dp"
+            android:text="line"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#25a144"
+            android:padding="10dp"
+            android:text="ends"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#552d91"
+            android:padding="10dp"
+            android:text="because"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#25a13c"
+            android:paddingEnd="100dp"
+            android:text="it"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#93a125"
+            android:padding="10dp"
+            android:text="is"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#2527a1"
+            android:padding="10dp"
+            android:text="placed"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#a16325"
+            android:padding="10dp"
+            android:text="in"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="#a12559"
+            android:padding="10dp"
+            android:text="BreakableList"
+            android:textSize="20sp" />
+
+    </com.prokoshevnik.uiutils.breakablelist.BreakableListLayout>
+
+</FrameLayout>
