@@ -68,7 +68,7 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
             val childWidth = child.measuredWidth
             val childHeight = child.measuredHeight
 
-            if (currentTopEndX + childMarginLeft + childWidth + childMarginRight > width) {
+            if (currentTopEndX + childMarginLeft + childWidth > width) {
                 currentTopEndY += rowHeight
 
                 child.layout(childMarginLeft,
