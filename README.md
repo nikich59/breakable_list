@@ -5,7 +5,7 @@ See app module for usage example.
 
 ![alt text](https://github.com/nikich59/breakable_list/blob/master/Screenshot_1555538865.png)
 
-# Include
+# Add to your project
 
 ## Gradle
 Add it in your root build.gradle at the end of repositories:
