@@ -10,20 +10,20 @@ See app module for usage example.
 ## Gradle
 Add it in your root build.gradle at the end of repositories:
 
-<code>
+```
   allprojects {  
 		repositories {  
 			...  
 			maven { url 'https://jitpack.io' }  
 		}<br/>
 	}
-  </code>
+```
 
 Add the dependency:
 
-<code>
+```
   dependencies {  
 	        implementation 'com.github.nikich59:breakable_list:-SNAPSHOT'  
 	}
-</code>
+```
 
