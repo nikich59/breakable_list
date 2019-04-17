@@ -10,7 +10,5 @@ class BreakableListExampleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_breakable_list_example)
-
-        val breakableList = findViewById<BreakableListLayout>(R.id.breakable_list_example_view)
     }
 }
