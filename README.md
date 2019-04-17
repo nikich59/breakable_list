@@ -11,19 +11,19 @@ See app module for usage example.
 Add it in your root build.gradle at the end of repositories:
 
 <code>
-  allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+  allprojects {<br/>
+		repositories {<br/>
+			...<br/>
+			maven { url 'https://jitpack.io' }<br/>
+		}<br/>
 	}
   </code>
 
 Add the dependency:
 
 <code>
-  dependencies {
-	        implementation 'com.github.nikich59:breakable_list:-SNAPSHOT'
+  dependencies {<br/>
+	        implementation 'com.github.nikich59:breakable_list:-SNAPSHOT'<br/>
 	}
 </code>
 
