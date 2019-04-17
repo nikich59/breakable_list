@@ -1,7 +1,7 @@
 # Breakable List
 
 Breakable list for Android allows you to create LinearLayout-like layout that breaks line when new View goes outside its field of view.  
-See [app module](https://github.com/nikich59/breakable_list/tree/master/app) for usage example.
+See [app module](https://github.com/nikich59/breakable_list/tree/master/app) for usage example.<br/><br/>
 
 ![alt text](https://github.com/nikich59/breakable_list/blob/master/Screenshot_1555538865.png)
 
