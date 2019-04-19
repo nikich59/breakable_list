@@ -2,6 +2,7 @@ package com.prokoshevnik.uiutils.breakablelist
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.ViewGroup
 import android.widget.FrameLayout
 
@@ -26,8 +27,13 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
             for (childIndex in 0.until(childCount)) {
                 val child = getChildAt(childIndex)
 
-                if (child.bottom > height) {
-                    height = child.bottom
+                child.measure(0, 0)
+
+                val childMarginBottom = (child.layoutParams as ViewGroup.MarginLayoutParams).bottomMargin
+                val bottom = child.y + child.height + childMarginBottom
+
+                if (bottom > height) {
+                    height = bottom.toInt()
                 }
             }
 
@@ -74,7 +80,13 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
 
     override fun onLayout(p0: Boolean, p1: Int, p2: Int, p3: Int, p4: Int) {
         if (isChildrenPositionFixed) {
-            return
+            for (childIndex in 0.until(childCount)) {
+                val child = getChildAt(childIndex)
+
+                child.measure(0, 0)
+            }
+
+            measure(0, 0)
         }
 
         var currentTopEndX = 0
