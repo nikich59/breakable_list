@@ -27,7 +27,7 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
             for (childIndex in 0.until(childCount)) {
                 val child = getChildAt(childIndex)
 
-                child.measure(0, 0)
+                child.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
 
                 val childMarginBottom = (child.layoutParams as ViewGroup.MarginLayoutParams).bottomMargin
                 val bottom = child.y + child.height + childMarginBottom
@@ -52,7 +52,7 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
         for (childIndex in 0.until(childCount)) {
             val child = getChildAt(childIndex)
 
-            child.measure(0, 0)
+            child.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
 
             val childMarginLeft = (child.layoutParams as ViewGroup.MarginLayoutParams).leftMargin
             val childMarginTop = (child.layoutParams as ViewGroup.MarginLayoutParams).topMargin
@@ -83,10 +83,10 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
             for (childIndex in 0.until(childCount)) {
                 val child = getChildAt(childIndex)
 
-                child.measure(0, 0)
+                child.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
             }
 
-            measure(0, 0)
+            measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
         }
 
         var currentTopEndX = 0
@@ -97,7 +97,7 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
         for (childIndex in 0.until(childCount)) {
             val child = getChildAt(childIndex)
 
-            child.measure(0, 0)
+            child.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
 
             val childMarginLeft = (child.layoutParams as ViewGroup.MarginLayoutParams).leftMargin
             val childMarginTop = (child.layoutParams as ViewGroup.MarginLayoutParams).topMargin
