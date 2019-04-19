@@ -49,6 +49,9 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
                     isChildrenPositionFixed = false
                 }
             })
+            animationY.addUpdateListener { animation, value, velocity ->
+                requestLayout()
+            }
             animationX.start()
             animationY.start()
         }
