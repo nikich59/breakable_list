@@ -25,7 +25,7 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
             requestLayout()
         }
 
-    fun animateToOrder() {
+    fun animateToOrder(endListener: Runnable?) {
         val childrenEndGeometries = getChildrenGeometryAndMargins()
         val animationEndedCount = AtomicInteger(0)
         val childCount = childCount
@@ -41,12 +41,14 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
                 animationEndedCount.incrementAndGet()
                 if (animationEndedCount.get() == childCount) {
                     isChildrenPositionFixed = false
+                    endListener?.run()
                 }
             })
             animationY.addEndListener({ animation, canceled, value, velocity ->
                 animationEndedCount.incrementAndGet()
                 if (animationEndedCount.get() == childCount) {
                     isChildrenPositionFixed = false
+                    endListener?.run()
                 }
             })
             animationY.addUpdateListener { animation, value, velocity ->
