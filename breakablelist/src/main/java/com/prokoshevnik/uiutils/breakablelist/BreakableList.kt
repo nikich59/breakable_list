@@ -12,14 +12,12 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
 
     constructor(context: Context, attrs: AttributeSet) : this(context, attrs, 0)
 
-    private var isChildrenPositionFixed = false
+    var isChildrenPositionFixed = false
         get() = field
         set(isChildrenPositionFixed: Boolean) {
             field = isChildrenPositionFixed
             requestLayout()
         }
-
-    public var trewe = false
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         if (isChildrenPositionFixed) {
