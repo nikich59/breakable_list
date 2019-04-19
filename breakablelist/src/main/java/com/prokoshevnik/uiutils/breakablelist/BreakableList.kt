@@ -40,13 +40,13 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
             animationX.addEndListener({ animation, canceled, value, velocity ->
                 animationEndedCount.incrementAndGet()
                 if (animationEndedCount.get() == childCount) {
-                    isChildrenPositionFixed = true
+                    isChildrenPositionFixed = false
                 }
             })
             animationY.addEndListener({ animation, canceled, value, velocity ->
                 animationEndedCount.incrementAndGet()
                 if (animationEndedCount.get() == childCount) {
-                    isChildrenPositionFixed = true
+                    isChildrenPositionFixed = false
                 }
             })
             animationX.start()
