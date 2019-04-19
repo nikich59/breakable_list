@@ -18,7 +18,7 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
             field = isChildrenPositionFixed
             requestLayout()
         }
-
+    
     public var trewe = false
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
