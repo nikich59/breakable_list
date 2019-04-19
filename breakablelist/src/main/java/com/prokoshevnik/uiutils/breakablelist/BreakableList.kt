@@ -12,7 +12,32 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
 
     constructor(context: Context, attrs: AttributeSet) : this(context, attrs, 0)
 
+    private var isChildrenPositionFixed = false
+        get() = field
+        set(isChildrenPositionFixed: Boolean) {
+            field = isChildrenPositionFixed
+            requestLayout()
+        }
+
+    public var trewe = false
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        if (isChildrenPositionFixed) {
+            var height = 0
+
+            for (childIndex in 0.until(childCount)) {
+                val child = getChildAt(childIndex)
+
+                if (child.bottom > height) {
+                    height = child.bottom
+                }
+            }
+
+            setMeasuredDimension(widthMeasureSpec, height)
+
+            return
+        }
+
         var currentTopEndX = 0
         var currentTopEndY = 0
 
@@ -50,6 +75,10 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
     }
 
     override fun onLayout(p0: Boolean, p1: Int, p2: Int, p3: Int, p4: Int) {
+        if (isChildrenPositionFixed) {
+            return
+        }
+
         var currentTopEndX = 0
         var currentTopEndY = 0
 
