@@ -3,6 +3,7 @@ package com.prokoshevnik.uiutils.breakablelist
 import android.content.Context
 import android.support.animation.DynamicAnimation
 import android.support.animation.SpringAnimation
+import android.support.animation.SpringForce
 import android.util.AttributeSet
 import android.util.Log
 import android.util.Size
@@ -25,6 +26,9 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
             requestLayout()
         }
 
+    var springDampingRatio = SpringForce.DAMPING_RATIO_MEDIUM_BOUNCY
+    var springStiffness = SpringForce.STIFFNESS_MEDIUM
+
     fun animateToOrder(endListener: (() -> Unit)?) {
         val childrenEndGeometries = getChildrenGeometryAndMargins()
         val animationEndedCount = AtomicInteger(0)
@@ -34,8 +38,12 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
             val child = getChildAt(childIndex)
             val animationX = SpringAnimation(
                     child, DynamicAnimation.X, childrenEndGeometries[childIndex].x.toFloat())
+            animationX.spring.dampingRatio = springDampingRatio
+            animationX.spring.stiffness = springStiffness
             val animationY = SpringAnimation(
                     child, DynamicAnimation.Y, childrenEndGeometries[childIndex].y.toFloat())
+            animationY.spring.dampingRatio = springDampingRatio
+            animationY.spring.stiffness = springStiffness
 
             animationX.addEndListener({ animation, canceled, value, velocity ->
                 animationEndedCount.incrementAndGet()
