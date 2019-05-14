@@ -5,9 +5,7 @@ import android.support.animation.DynamicAnimation
 import android.support.animation.SpringAnimation
 import android.support.animation.SpringForce
 import android.util.AttributeSet
-import android.util.Log
-import android.util.Size
-import android.util.SizeF
+import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import java.util.concurrent.atomic.AtomicInteger
@@ -74,6 +72,10 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
             for (childIndex in 0.until(childCount)) {
                 val child = getChildAt(childIndex)
 
+                if (child.visibility == View.GONE) {
+                    continue
+                }
+
                 child.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
 
                 val childMarginBottom = (child.layoutParams as ViewGroup.MarginLayoutParams).bottomMargin
@@ -98,6 +100,10 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
 
         for (childIndex in 0.until(childCount)) {
             val child = getChildAt(childIndex)
+
+            if (child.visibility == View.GONE) {
+                continue
+            }
 
             child.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
 
@@ -149,6 +155,18 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
             val childWidth = child.measuredWidth
             val childHeight = child.measuredHeight
 
+            if (child.visibility == View.GONE) {
+                result.add(ChildGeometry(childMarginLeft,
+                        currentTopEndY + childMarginTop,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0)
+                )
+            }
+
             if (currentTopEndX + childMarginLeft + childWidth > width) {
                 currentTopEndY += rowHeight
 
@@ -190,6 +208,10 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
             for (childIndex in 0.until(childCount)) {
                 val child = getChildAt(childIndex)
 
+                if (child.visibility == View.GONE) {
+                    continue
+                }
+
                 child.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
             }
 
@@ -203,6 +225,10 @@ class BreakableListLayout(context: Context, attrs: AttributeSet?, defStyle: Int)
 
         for (childIndex in 0.until(childCount)) {
             val child = getChildAt(childIndex)
+
+            if (child.visibility == View.GONE) {
+                continue
+            }
 
             child.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED)
 
